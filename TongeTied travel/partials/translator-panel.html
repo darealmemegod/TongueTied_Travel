@@ -1,0 +1,238 @@
+<section class="section" id="translator-panel">
+    <div class="container-wide">
+        <div class="translator-wrapper">
+            <!-- Заголовок панели -->
+            <div class="panel-header">
+                <div class="header-content">
+                    <h2>
+                        <i class="fas fa-language"></i>
+                        <span data-i18n="translator_title">Переводчик для путешествий</span>
+                    </h2>
+                    <p class="panel-subtitle" data-i18n="translator_subtitle">
+                        Введите фразу или говорите — получите перевод с произношением
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Основное содержимое панели -->
+            <div class="panel-content">
+                <!-- Левая колонка: Ввод -->
+                <div class="input-column">
+                    <!-- Вкладки: Текст / Голос -->
+                    <div class="input-tabs">
+                        <button class="tab-btn active" data-tab="text">
+                            <i class="fas fa-keyboard"></i>
+                            <span data-i18n="tab_text">Текст</span>
+                        </button>
+                        <button class="tab-btn" data-tab="voice">
+                            <i class="fas fa-microphone"></i>
+                            <span data-i18n="tab_voice">Голос</span>
+                        </button>
+                    </div>
+                    
+                    <!-- Текстовый ввод -->
+                    <div class="tab-content active" id="textTab">
+                        <div class="text-input-wrapper">
+                            <textarea 
+                                id="userPhraseInput"
+                                placeholder="Например: Где ближайшая аптека? Или как заказать такси?"
+                                rows="4"
+                                maxlength="400"
+                                data-i18n-placeholder="input_placeholder"></textarea>
+                            
+                            <div class="input-actions">
+                                <button class="icon-btn small" id="clearInputBtn" title="Очистить">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                                <button class="icon-btn small" id="pasteBtn" title="Вставить из буфера">
+                                    <i class="fas fa-paste"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="input-footer">
+                            <span class="char-counter">
+                                <span id="charCount">0</span>/400
+                            </span>
+                            <button class="voice-input-btn" id="voiceInputBtn" title="Голосовой ввод">
+                                <i class="fas fa-microphone"></i>
+                                <span data-i18n="voice_input">Голосовой ввод</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Голосовой ввод -->
+                    <div class="tab-content" id="voiceTab">
+                        <div class="voice-input-wrapper">
+                            <button class="voice-record-btn" id="voiceRecordBtn">
+                                <i class="fas fa-microphone"></i>
+                                <span data-i18n="start_recording">Начать запись</span>
+                            </button>
+                            <div class="voice-status" id="voiceStatus" style="display: none;">
+                                <div class="voice-visualizer">
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                </div>
+                                <span class="status-text">Слушаю...</span>
+                            </div>
+                            <div class="voice-result" id="voiceResult"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Быстрые фразы -->
+                    <div class="quick-phrases">
+                        <div class="section-label" data-i18n="quick_phrases">Быстрые фразы:</div>
+                        <div class="phrase-chips">
+                            <button class="phrase-chip" data-text="Где ближайший туалет?">Где ближайший туалет?</button>
+                            <button class="phrase-chip" data-text="Сколько это стоит?">Сколько это стоит?</button>
+                            <button class="phrase-chip" data-text="Мне нужна помощь">Мне нужна помощь</button>
+                            <button class="phrase-chip" data-text="Где остановка автобуса?">Где остановка автобуса?</button>
+
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Правая колонка: Управление и результат -->
+                <div class="control-column">
+                    <!-- Выбор языка -->
+                    <div class="language-selector-compact">
+                        <label class="selector-label" data-i18n="translate_to">
+                            <i class="fas fa-globe"></i>
+                            Перевести на:
+                        </label>
+                        
+                        <div class="dropdown-wrapper">
+                            <button class="dropdown-btn" id="targetLanguageBtn">
+                                <span class="selected-language">
+                                    <span class="flag">🇬🇧</span>
+                                    <span class="name">English</span>
+                                </span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            
+                            <div class="dropdown-menu" id="targetLanguageMenu">
+                                <div class="language-options-grid">
+                                    <button class="lang-option" data-lang="en">
+                                        <span class="flag">🇬🇧</span>
+                                        <span class="name">English</span>
+                                    </button>
+                                    <button class="lang-option" data-lang="es">
+                                        <span class="flag">🇪🇸</span>
+                                        <span class="name">Español</span>
+                                    </button>
+                                    <button class="lang-option" data-lang="fr">
+                                        <span class="flag">🇫🇷</span>
+                                        <span class="name">Français</span>
+                                    </button>
+                                    <button class="lang-option" data-lang="it">
+                                        <span class="flag">🇮🇹</span>
+                                        <span class="name">Italiano</span>
+                                    </button>
+                                    <button class="lang-option" data-lang="zh">
+                                        <span class="flag">🇨🇳</span>
+                                        <span class="name">中文</span>
+                                    </button>
+                                    <button class="lang-option" data-lang="ja">
+                                        <span class="flag">🇯🇵</span>
+                                        <span class="name">日本語</span>
+                                    </button>
+                                    <button class="lang-option" data-lang="ko">
+                                        <span class="flag">🇰🇷</span>
+                                        <span class="name">한국어</span>
+                                    </button>
+                                    <button class="lang-option" data-lang="ru">
+                                        <span class="flag">🇷🇺</span>
+                                        <span class="name">Русский</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Кнопка перевода -->
+                    <button class="translate-action-btn" id="translateBtn" disabled>
+                        <i class="fas fa-language"></i>
+                        <span data-i18n="translate_button">Перевести</span>
+                    </button>
+                    
+                    <!-- Индикатор загрузки -->
+                    <div class="loading-container" id="loadingIndicator" style="display: none;">
+                        <div class="loading-spinner"></div>
+                        <span data-i18n="translating">Перевожу...</span>
+                    </div>
+                    
+                    <!-- Результат перевода -->
+                    <div class="translation-result" id="translationResult" style="display: none;">
+                        <div class="result-header">
+                            <h3 data-i18n="result_title">Перевод готов</h3>
+                            <div class="result-language">
+                                <span class="flag" id="resultFlag">🇬🇧</span>
+                                <span class="name" id="resultLangName">English</span>
+                            </div>
+                        </div>
+                        
+                        <div class="result-content">
+                            <!-- Оригинал -->
+                            <div class="result-block">
+                                <div class="block-label" data-i18n="original_label">Оригинал:</div>
+                                <div class="block-text original" id="phraseOriginal"></div>
+                            </div>
+                            
+                            <!-- Перевод -->
+                            <div class="result-block">
+                                <div class="block-label" data-i18n="translation_label">Перевод:</div>
+                                <div class="block-text translation" id="phraseTranslation"></div>
+                            </div>
+                            
+                            <!-- Произношение -->
+                            <div class="result-block">
+                                <div class="block-label">
+                                    <span data-i18n="pronunciation_label">Произношение:</span>
+                                    <button class="help-btn" title="Фонетическая транскрипция">
+                                        <i class="fas fa-question-circle"></i>
+                                    </button>
+                                </div>
+                                <div class="transcription-text" id="phraseTranscription"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Действия с результатом -->
+                        <div class="result-actions">
+                            <button class="action-btn primary" id="speakPhraseBtn">
+                                <i class="fas fa-volume-up"></i>
+                                <span data-i18n="speak_phrase">Произнести</span>
+                            </button>
+                            <button class="action-btn secondary" id="copyPhraseBtn">
+                                <i class="fas fa-copy"></i>
+                                <span data-i18n="copy_phrase">Копировать</span>
+                            </button>
+                            <button class="action-btn secondary" id="savePhraseBtn">
+                                <i class="fas fa-heart"></i>
+                                <span data-i18n="save_phrase">Сохранить</span>
+                            </button>
+                            <button class="action-btn secondary" id="sharePhraseBtn">
+                                <i class="fas fa-share-alt"></i>
+                                <span data-i18n="share_phrase">Поделиться</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Подсказки -->
+                    <div class="panel-tips">
+                        <div class="tip">
+                            <i class="fas fa-lightbulb"></i>
+                            <span data-i18n="tip_pronunciation">Нажмите "Произнести" чтобы услышать правильное произношение</span>
+                        </div>
+                        <div class="tip">
+                            <i class="fas fa-qrcode"></i>
+                            <span data-i18n="tip_qr">Используйте "Поделиться" чтобы показать QR-код перевода</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>  

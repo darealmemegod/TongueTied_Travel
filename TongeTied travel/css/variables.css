@@ -1,0 +1,143 @@
+:root {
+    /* Основные цвета */
+    --primary-deep-blue: #1A1B3E;
+    --primary-blue: #4A3BFF;
+    --primary-blue-light: #6C63FF;
+    --accent-teal: #00C9B7;
+    --accent-orange: #FF6B35;
+    --accent-orange-dark: #E55624;
+    --accent-warm: #FF9A3D;
+    
+    /* Светлая тема */
+    --bg-primary: #ffffff;
+    --bg-secondary: #F8F9FF;
+    --bg-tertiary: #F0F2FF;
+    --text-primary: #0F0F2D;
+    --text-secondary: #0F0F2D;
+    --text-tertiary: #151a36;
+    --border-color: #E2E8FF;
+    --shadow-color: rgba(74, 59, 255, 0.15);
+    
+    /* Градиенты */
+    --gradient-primary: linear-gradient(135deg, #4A3BFF 0%, #6C63FF 100%);
+    --gradient-accent: linear-gradient(135deg, #FF6B35 0%, #FF9A3D 100%);
+    --gradient-dark: linear-gradient(135deg, #1A1B3E 0%, #2D2B5E 100%);
+    --gradient-hero: linear-gradient(135deg, #4A3BFF 0%, #00C9B7 100%);
+    --gradient-top-bar: linear-gradient(135deg, #1A1B3E 0%, #2D2B5E 100%);
+    
+    /* Размеры и анимации остаются без изменений */
+}
+
+/* Плавные переходы для темы */
+body {
+    transition: background-color var(--transition-slow),
+                color var(--transition-slow),
+                border-color var(--transition-slow),
+                box-shadow var(--transition-slow);
+}
+
+* {
+    transition: background-color var(--transition-slow),
+                color var(--transition-slow),
+                border-color var(--transition-slow),
+                box-shadow var(--transition-slow);
+}
+
+[data-theme="dark"] {
+    --primary-deep-blue: #0F0F2D;
+    --primary-blue: #9994ff;
+    --primary-blue-light: #8A84FF;
+    --accent-teal: #00E0C7;
+    --accent-orange: #FF8B5C;
+    --accent-orange-dark: #FF6B35;
+    --accent-warm: #FFB885;
+    
+    /* ФОН ВСЕЙ СТРАНИЦЫ ТЁМНЫЙ */
+    --bg-primary: #0F0F2D;
+    --bg-secondary: rgba(26, 27, 62, 0.9);
+    --bg-tertiary: rgba(42, 44, 93, 0.6);
+    --text-primary: #FFFFFF;
+    --text-secondary: rgba(255, 255, 255, 0.9);
+    --text-tertiary: rgba(255, 255, 255, 0.7);
+    --border-color: rgba(108, 99, 255, 0.3);
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    
+    --gradient-primary: linear-gradient(135deg, #9994ff 0%, #8A84FF 100%);
+    --gradient-accent: linear-gradient(135deg, #9994ff 0%, #8A84FF 100%);
+    --gradient-dark: linear-gradient(135deg, #0F0F2D 0%, #1A1B3E 100%);
+    --gradient-hero: linear-gradient(135deg, #9994ff 0%, #8A84FF 100%);
+    --gradient-top-bar: linear-gradient(135deg, #1A1B3E 0%, #0F0F2D 100%);
+}
+
+[data-theme="dark"] body {
+    background: var(--gradient-dark);
+    background-attachment: fixed;
+}
+
+[data-contrast="high"] {
+    --bg-primary: #000000;
+    --bg-secondary: #111111;
+    --bg-tertiary: #222222;
+    --text-primary: #FFFFFF;
+    --text-secondary: #FFFFFF;
+    --text-tertiary: #FFFFFF;
+    --border-color: #FFFFFF;
+    --shadow-color: rgba(255, 255, 255, 0.3);
+    
+    --primary-blue: #0066FF;
+    --accent-orange: #FF6600;
+    --accent-teal: #00FFFF;
+    
+    --gradient-top-bar: linear-gradient(135deg, #000000 0%, #111111 100%);
+    --gradient-hero: linear-gradient(135deg, #0066FF 0%, #00FFFF 100%);
+}
+
+[data-font-size="large"] {
+    --font-size-xs: 0.875rem;
+    --font-size-sm: 1rem;
+    --font-size-base: 1.125rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 1.875rem;
+    --font-size-3xl: 2.25rem;
+    --font-size-4xl: 3rem;
+}
+
+[data-font-size="xlarge"] {
+    --font-size-xs: 1rem;
+    --font-size-sm: 1.125rem;
+    --font-size-base: 1.25rem;
+    --font-size-lg: 1.5rem;
+    --font-size-xl: 1.875rem;
+    --font-size-2xl: 2.25rem;
+    --font-size-3xl: 3rem;
+    --font-size-4xl: 3.75rem;
+}
+
+[data-theme="dark"] {
+    background: var(--gradient-dark);
+    min-height: 100vh;
+}
+
+/* Отступ для фиксированного top-bar */
+body {
+    padding-top: 64px !important;
+    min-height: 100vh;
+}
+
+/* Reduced motion styles */
+.reduced-motion *,
+.reduced-motion *::before,
+.reduced-motion *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+}
+
+/* Базовые transition переменные */
+:root {
+    --transition-fast: 150ms ease;
+    --transition-normal: 250ms ease;
+    --transition-slow: 350ms ease;
+}

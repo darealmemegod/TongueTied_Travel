@@ -1,0 +1,82 @@
+<section class="section" id="ai-assistant">
+    <div class="container">
+        <div class="feature-header">
+            <h2 data-i18n="ai_title">ИИ-помощник для путешествий</h2>
+            <p class="feature-subtitle" data-i18n="ai_subtitle">
+                Задавайте вопросы на родном языке — получите ответ на языке страны
+            </p>
+        </div>
+        
+        <div class="feature-card ai-preview">
+            <div class="feature-content">
+                <div class="feature-text">
+                    <h3 data-i18n="ai_features_title">Что умеет помощник:</h3>
+                    <ul class="feature-list">
+                        <li data-i18n="ai_feature1">Переводит сложные фразы с учётом культурных особенностей</li>
+                        <li data-i18n="ai_feature2">Объясняет местные обычаи и правила этикета</li>
+                        <li data-i18n="ai_feature3">Помогает составить диалог для конкретной ситуации</li>
+                        <li data-i18n="ai_feature4">Предлагает альтернативные формулировки</li>
+                        <li data-i18n="ai_feature5">Работает полностью оффлайн после загрузки</li>
+                    </ul>
+                    
+                    <div class="ai-demo">
+                        <div class="ai-message user">
+                            <div class="message-text" data-i18n="ai_demo_question">
+                                Как вежливо попросить скидку в магазине в Турции?
+                            </div>
+                        </div>
+                        <div class="ai-message assistant">
+                            <div class="message-text" data-i18n="ai_demo_answer">
+                                "Affedersiniz, biraz indirim yapabilir misiniz?" (Извините, можете сделать небольшую скидку?) 
+                                + Добавьте улыбку — в Турции это важная часть общения.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-actions">
+                        <button class="action-btn primary ai-start-btn">
+                            <i class="fas fa-robot"></i>
+                            <span data-i18n="start_ai">Запустить помощника</span>
+                        </button>
+                        <button class="action-btn secondary ai-try-btn">
+                            <i class="fas fa-comment"></i>
+                            <span data-i18n="try_demo">Попробовать демо</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="feature-visual">
+                    <div class="ai-interface">
+                        <div class="ai-header">
+                            <div class="ai-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="ai-info">
+                                <span class="ai-name" data-i18n="ai_name">Путеводитель AI</span>
+                                <span class="ai-status" data-i18n="ai_status">В сети</span>
+                            </div>
+                        </div>
+                        
+                        <div class="ai-chat">
+                            <div class="ai-message incoming">
+                                <div class="message-text" data-i18n="ai_welcome">
+                                Привет! Я помогу перевести любую фразу и подскажу, как лучше её произнести. О чём хотите спросить?
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="ai-input">
+                            <input type="text" 
+                                   placeholder="Напишите ваш вопрос..." 
+                                   data-i18n-placeholder="ai_placeholder"
+                                   disabled>
+                            <button class="ai-send-btn" aria-label="Отправить сообщение">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

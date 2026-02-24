@@ -1,0 +1,127 @@
+.accessibility-toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    padding: 6px 0; /* Уменьшен вертикальный padding */
+    z-index: 1000;
+    height: 52px; /* Фиксированная высота */
+    display: flex;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px var(--shadow-color);
+}
+
+.accessibility-toolbar .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px; /* Уменьшен gap между кнопками */
+    align-items: center;
+    width: 100%;
+}
+
+/* Accessibility menu */
+.accessibility-panel {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1000;
+}
+
+.accessibility-menu {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: 24px;
+    min-width: 320px;
+    box-shadow: 0 8px 40px var(--shadow-color);
+    display: none;
+}
+
+.accessibility-menu.show {
+    display: block;
+    animation: fadeInUp 0.2s ease-out;
+}
+
+.accessibility-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.accessibility-item label {
+    font-size: var(--font-size-sm);
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* Slider for toggles */
+.slider {
+    width: 60px;
+    height: 30px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-full);
+    position: relative;
+    cursor: pointer;
+}
+
+.slider::before {
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform var(--transition-fast);
+}
+
+.slider.active {
+    background: var(--primary-blue);
+}
+
+.slider.active::before {
+    transform: translateX(30px);
+}
+
+.accessibility-toggle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(74, 59, 255, 0.3);
+}
+
+.accessibility-toggle:hover,
+.accessibility-toggle:focus {
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: 0 8px 30px rgba(74, 59, 255, 0.4);
+    outline: none;
+}
+
+@media (max-width: 480px) {
+    .accessibility-menu {
+        min-width: 280px;
+        right: -20px;
+    }
+    
+    .accessibility-toolbar {
+        height: auto;
+        min-height: 52px;
+    }
+}

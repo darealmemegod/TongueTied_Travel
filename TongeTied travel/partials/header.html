@@ -1,0 +1,54 @@
+<!-- ЕДИНАЯ ФИКСИРОВАННАЯ ПОЛОСА -->
+<header class="top-bar">
+    <div class="container">
+        <!-- Лево: логотип + кнопки доступности -->
+        <div class="top-bar-left">
+            <a href="/" class="logo" aria-label="TongueTied Travel">
+                <div class="logo-icon">
+                    <i class="fas fa-language"></i>
+                </div>
+                <span class="logo-text">Tongue<span class="logo-accent">Tied</span> Travel</span>
+            </a>
+
+            <div class="accessibility-buttons">
+                <button class="accessibility-btn" id="increaseFont" aria-label="Увеличить шрифт" title="Увеличить шрифт">
+                    <i class="fas fa-plus"></i>
+                </button>
+                <button class="accessibility-btn" id="decreaseFont" aria-label="Уменьшить шрифт" title="Уменьшить шрифт">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button class="accessibility-btn" id="toggleContrast" aria-label="Высокая контрастность" title="Высокая контрастность">
+                    <i class="fas fa-adjust"></i>
+                </button>
+                <button class="accessibility-btn" id="toggleTheme" aria-label="Переключить тему" title="Тёмная/светлая тема">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="accessibility-btn" id="readPage" aria-label="Озвучить страницу" title="Озвучить страницу">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Право: выбор языка -->
+        <div class="top-bar-right">
+            <div class="language-selector">
+                <button class="language-btn" id="languageBtn" aria-haspopup="true" aria-expanded="false">
+                    <span class="language-flag">🇷🇺</span>
+                    <span id="currentLanguage">Русский</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="language-dropdown" id="languageDropdown" role="menu" aria-label="Выбор языка">
+                    <!-- заполняется JS -->
+                </div>
+            </div>
+        </div>
+
+          <!-- Account bubble -->
+            <div data-include="partials/account-menu.html"></div>
+        </div>
+
+        <!-- Modal can live outside the bar -->
+        <div data-include="partials/auth-modal.html"></div>
+
+    </div>
+</header>

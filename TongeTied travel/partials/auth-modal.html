@@ -1,0 +1,24 @@
+<div class="auth-modal-backdrop" id="authModal" style="display:none;">
+  <div class="auth-modal">
+    <div class="auth-modal-header">
+      <h3>Sign in</h3>
+      <button class="auth-close" id="closeAuthModalBtn" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <p class="auth-subtitle">We’ll email you a magic link. No password.</p>
+
+    <div class="auth-form">
+      <label class="auth-label" for="authEmail">Email</label>
+      <input class="auth-input" id="authEmail" type="email" autocomplete="email" placeholder="you@example.com" />
+
+      <button class="auth-submit" id="sendMagicLinkBtn">
+        <i class="fas fa-paper-plane"></i>
+        <span>Send sign-in link</span>
+      </button>
+
+      <div class="auth-status" id="authStatus"></div>
+    </div>
+  </div>
+</div>

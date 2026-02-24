@@ -1,0 +1,246 @@
+/* ===== TOP BAR STYLES ===== */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    background: var(--gradient-top-bar);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+/* White text only for specific elements, not all */
+.top-bar .logo,
+.top-bar .logo-text,
+.top-bar .logo-accent,
+.top-bar .accessibility-btn,
+.top-bar .language-btn,
+.top-bar .language-btn i {
+    color: white !important;
+}
+
+.language-btn {
+    color: white;
+}
+
+#currentLanguage {
+    color: white; 
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.top-bar-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.top-bar-right {
+    display: flex;
+    align-items: center;
+}
+
+.top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* 👈 bubble closer */
+}
+
+
+/* ===== ЛОГОТИП ===== */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.logo:hover {
+    opacity: 0.9;
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--gradient-accent);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    font-size: 1rem;
+}
+
+.logo-text {
+    color: inherit;
+}
+
+.logo-accent {
+    color: var(--accent-teal);
+}
+
+/* ===== КНОПКИ ДОСТУПНОСТИ ===== */
+.accessibility-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.accessibility-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.accessibility-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.accessibility-btn:active {
+    transform: translateY(0);
+}
+
+/* Специальные кнопки поддержки */
+.accessibility-btn.support-icon {
+    color: #ff6b6b;
+}
+
+.accessibility-btn.coffee-icon {
+    color: #ffd166;
+}
+
+/* ===== АНИМАЦИИ ===== */
+@keyframes dropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 768px) {
+    .top-bar .container {
+        padding: 0 12px;
+    }
+    
+    .top-bar-left {
+        gap: 12px;
+    }
+    
+    .logo {
+        font-size: 1rem;
+    }
+    
+    .logo-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+    
+    .accessibility-buttons {
+        gap: 4px;
+    }
+    
+    .accessibility-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+    .logo-text {
+        display: none;
+    }
+    
+    .logo {
+        gap: 0;
+    }
+    
+    .accessibility-buttons {
+        display: none; /* Можно скрыть на очень маленьких экранах */
+    }
+    
+    .language-btn {
+        min-width: 90px;
+        max-width: 120px;
+    }
+    
+    #currentLanguage {
+        font-size: 0.8rem;
+    }
+}
+
+/* ===== ТЕМЫ ===== */
+/* Для светлой темы немного корректируем прозрачность */
+[data-theme="light"] .top-bar {
+    backdrop-filter: blur(5px);
+}
+
+[data-theme="light"] .language-dropdown {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Для высокой контрастности */
+[data-contrast="high"] .top-bar {
+    background: var(--gradient-top-bar);
+    border-bottom: 2px solid white;
+}
+
+[data-contrast="high"] .accessibility-btn {
+    border: 1px solid white;
+}
+
+.top-bar {
+  z-index: 10000;
+}
+
+.top-bar-right {
+  gap: 8px;
+}
+
+.account-menu {
+  position: relative;
+  z-index: 11000;
+}
+
+.language-selector {
+  position: relative;
+  z-index: 10500;
+}
+
+.account-menu {
+  margin-left: 0;
+}

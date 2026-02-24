@@ -1,0 +1,147 @@
+/* ===== ЯЗЫКОВОЙ СЕЛЕКТОР ===== */
+.language-selector {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+/* Кнопка выбора языка */
+.language-btn {
+    height: 42px;
+    min-width: 120px;
+    max-width: 160px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.language-btn:hover,
+.language-btn:focus {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+    outline: none;
+    transform: translateY(-1px);
+}
+
+.language-btn:active {
+    transform: translateY(0);
+}
+
+/* Элементы внутри кнопки */
+.language-flag {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+#currentLanguage {
+    flex: 1;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: white;
+}
+
+.language-btn i {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    color: white;
+}
+
+/* Выпадающий список языков */
+.language-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: auto;
+    min-width: 240px;
+    max-width: 320px;
+    margin-top: 6px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 24px var(--shadow-color);
+    z-index: 1001;
+    display: none;
+    overflow: hidden;
+    animation: dropdownFadeIn 0.2s ease;
+}
+
+/* Элементы выпадающего списка */
+.language-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    width: 100%;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    text-align: left;
+    transition: background-color 0.2s ease;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.language-option:last-child {
+    border-bottom: none;
+}
+
+.language-option:hover {
+    background: var(--bg-secondary);
+}
+
+.language-option.selected {
+    background: var(--bg-tertiary);
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.language-option .language-flag {
+    font-size: 1.3rem;
+    color: inherit;
+}
+
+.language-option .language-name {
+    flex: 1;
+    color: inherit;
+}
+
+.language-option .checkmark {
+    opacity: 0.8;
+    color: var(--primary-blue);
+    font-size: 0.9rem;
+}
+
+/* Анимация */
+@keyframes dropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.language-selector,
+.language-dropdown {
+  z-index: 1000 !important;
+}

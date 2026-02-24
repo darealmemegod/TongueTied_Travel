@@ -1,0 +1,142 @@
+<!-- Расширенная панель карты -->
+<div id="mapPanel" class="map-panel">
+    <div class="map-panel-header">
+        <button class="panel-close" id="closeMapPanel" aria-label="Закрыть панель карты">
+            <i class="fas fa-times"></i>
+        </button>
+        <h2 class="panel-title">
+            <i class="fas fa-globe-americas"></i>
+            <span data-i18n="full_map_panel">Полная карта мест</span>
+        </h2>
+        <div class="panel-actions">
+            <button class="panel-action-btn" id="fullscreenToggle" title="Полноэкранный режим">
+                <i class="fas fa-expand"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="map-panel-content">
+        <aside class="map-sidebar">
+            <section class="sidebar-section">
+                <div class="section-header">
+                    <h3><i class="fas fa-search"></i> <span data-i18n="search_places">Поиск мест</span></h3>
+                </div>
+                <div class="section-content">
+                    <div class="search-input-group">
+                        <div class="search-input-wrapper">
+                            <i class="fas fa-search search-icon"></i>
+                            <input type="text" 
+                                   id="panelSearchInput" 
+                                   class="search-input" 
+                                   placeholder="Поиск на полной карте..."
+                                   data-i18n-placeholder="search_full_map">
+                        </div>
+                        <button class="search-btn" id="panelSearchBtn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="quick-categories">
+                        <button class="quick-category-btn" data-category="hotel">
+                            <i class="fas fa-bed"></i>
+                            <span data-i18n="category_hotel">Отели</span>
+                        </button>
+                        <button class="quick-category-btn" data-category="restaurant">
+                            <i class="fas fa-utensils"></i>
+                            <span data-i18n="category_restaurant">Рестораны</span>
+                        </button>
+                        <button class="quick-category-btn" data-category="hospital">
+                            <i class="fas fa-hospital"></i>
+                            <span data-i18n="category_hospital">Больницы</span>
+                        </button>
+                        <button class="quick-category-btn" data-category="pharmacy">
+                            <i class="fas fa-pills"></i>
+                            <span data-i18n="category_pharmacy">Аптеки</span>
+                        </button>
+                        <button class="quick-category-btn" data-category="attraction">
+                            <i class="fas fa-mountain"></i>
+                            <span data-i18n="category_attraction">Достопримечательности</span>
+                        </button>
+                        <button class="quick-category-btn" data-category="police">
+                            <i class="fas fa-shield-alt"></i>
+                            <span data-i18n="category_police">Полиция</span>
+                        </button>
+                    </div>
+                    
+                    <div class="search-history" id="panelSearchHistory">
+                        <div class="history-header">
+                            <h4><i class="fas fa-history"></i> <span data-i18n="search_history">История поиска</span></h4>
+                            <button class="clear-history" id="clearPanelHistory" data-i18n="clear">Очистить</button>
+                        </div>
+                        <div class="history-list" id="panelHistoryList">
+                            <!-- Заполняется динамически -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="sidebar-section">
+                <div class="section-header">
+                    <h3><i class="fas fa-bookmark"></i> <span data-i18n="saved_places">Избранное</span></h3>
+                </div>
+                <div class="section-content">
+                    <div class="saved-places-list" id="panelSavedList">
+                        <!-- Заполняется динамически -->
+                    </div>
+                    <button class="btn btn-secondary btn-sm btn-full" id="clearSavedPlaces">
+                        <i class="fas fa-trash"></i>
+                        <span data-i18n="clear_all">Очистить всё</span>
+                    </button>
+                </div>
+            </section>
+        </aside>
+
+        <main class="map-main">
+            <div class="map-container">
+                <div id="panelMap" class="panel-map"></div>
+                
+                <div class="panel-map-controls">
+                    <button class="panel-control-btn" id="panelZoomIn" title="Увеличить">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <button class="panel-control-btn" id="panelZoomOut" title="Уменьшить">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button class="panel-control-btn" id="panelLocateMe" title="Мое местоположение">
+                        <i class="fas fa-crosshairs"></i>
+                    </button>
+                </div>
+                
+                <div class="coordinates-display" id="panelCoordinates">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>55.7558, 37.6173</span>
+                </div>
+            </div>
+            
+            <div class="place-details" id="panelPlaceDetails" style="display: none;"></div>
+        </main>
+    </div>
+
+    <footer class="panel-footer">
+        <div class="footer-stats">
+            <div class="stat-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="stat-info">
+                    <span class="stat-label" data-i18n="points_on_map">Точек на карте</span>
+                    <span class="stat-value" id="pointsCount">0</span>
+                </div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-ruler"></i>
+                <div class="stat-info">
+                    <span class="stat-label" data-i18n="distance_to_place">Расстояние до места</span>
+                    <span class="stat-value" id="distanceToPlace">-</span>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary" id="closeAndSave">
+            <i class="fas fa-check"></i>
+            <span data-i18n="save_and_close">Сохранить и закрыть</span>
+        </button>
+    </footer>
+</div>

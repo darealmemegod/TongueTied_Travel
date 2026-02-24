@@ -1,0 +1,77 @@
+<!-- Панель поиска для основной карты -->
+<div class="map-search-overlay">
+    <div class="search-bar">
+        <div class="search-input-wrapper">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" 
+                   id="mapSearchInput" 
+                   class="search-input" 
+                   placeholder="Найти место, адрес или категорию..."
+                   autocomplete="off"
+                   aria-label="Поиск на карте"
+                   data-i18n-placeholder="search_placeholder">
+            <button class="search-clear" id="clearSearch" aria-label="Очистить поиск">
+                <i class="fas fa-times"></i>
+            </button>
+            <button class="search-voice" id="voiceSearch" aria-label="Голосовой поиск">
+                <i class="fas fa-microphone"></i>
+            </button>
+        </div>
+        <button class="search-btn" id="executeSearch">
+            <i class="fas fa-search"></i>
+            <span data-i18n="search">Поиск</span>
+        </button>
+    </div>
+
+    <!-- Автодополнение -->
+    <div class="autocomplete-dropdown" id="autocompleteResults">
+        <div class="suggestions-header">
+            <span data-i18n="suggestions">Подсказки</span>
+            <button class="clear-history" id="clearAllHistory" data-i18n="clear_all">Очистить всё</button>
+        </div>
+        <div class="suggestions-container">
+            <!-- Недавние поиски -->
+            <div class="suggestions-section" id="recentSearchesSection">
+                <h4><i class="fas fa-history"></i> <span data-i18n="recent_searches">Недавние поиски</span></h4>
+                <div id="recentSearches"></div>
+            </div>
+            
+            <!-- Быстрые категории -->
+            <div class="suggestions-section">
+                <h4><i class="fas fa-bolt"></i> <span data-i18n="quick_categories">Быстрые категории</span></h4>
+                <div class="quick-categories">
+                    <button class="quick-category" data-category="restaurant">
+                        <i class="fas fa-utensils"></i>
+                        <span data-i18n="category_restaurant">Рестораны</span>
+                    </button>
+                    <button class="quick-category" data-category="hotel">
+                        <i class="fas fa-bed"></i>
+                        <span data-i18n="category_hotel">Отели</span>
+                    </button>
+                    <button class="quick-category" data-category="hospital">
+                        <i class="fas fa-hospital"></i>
+                        <span data-i18n="category_hospital">Больницы</span>
+                    </button>
+                    <button class="quick-category" data-category="pharmacy">
+                        <i class="fas fa-pills"></i>
+                        <span data-i18n="category_pharmacy">Аптеки</span>
+                    </button>
+                    <button class="quick-category" data-category="attraction">
+                        <i class="fas fa-mountain"></i>
+                        <span data-i18n="category_attraction">Достопримечательности</span>
+                    </button>
+                    <button class="quick-category" data-category="all">
+                        <i class="fas fa-list"></i>
+                        <span data-i18n="category_all">Все категории</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Результаты поиска -->
+            <div class="suggestions-section" id="searchResultsSection" style="display: none;">
+                <h4><i class="fas fa-map-marker-alt"></i> <span data-i18n="search_results">Результаты поиска</span></h4>
+                <div id="searchResultsList"></div>
+            </div>
+        </div>
+    </div>
+</div>

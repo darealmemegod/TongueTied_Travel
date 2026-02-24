@@ -1,0 +1,126 @@
+<!-- Секция карты -->
+<section class="map-section section" id="mapSection">
+    <div class="container">
+        <h2 class="section-title" data-i18n="map_section_title">Карта важных мест для путешественников</h2>
+        <p class="section-subtitle" data-i18n="map_section_subtitle">
+            Ищите больницы, отели, рестораны, аптеки и другие важные места. Сохраняйте в избранное и стройте маршруты.
+        </p>
+        
+        <div class="map-container-main">
+            <!-- Основная карта -->
+            <div id="map"></div>
+            
+            <!-- Панель поиска будет вставлена сюда -->
+            <div id="mapSearchContainer"></div>
+            
+            <!-- Контролы карты -->
+            <div class="map-controls">
+                <button class="map-control-btn" id="locateMe" title="Мое местоположение" data-i18n-title="my_location">
+                    <i class="fas fa-crosshairs"></i>
+                </button>
+                <button class="map-control-btn" id="zoomIn" title="Увеличить" data-i18n-title="zoom_in">
+                    <i class="fas fa-plus"></i>
+                </button>
+                <button class="map-control-btn" id="zoomOut" title="Уменьшить" data-i18n-title="zoom_out">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button class="map-control-btn" id="toggleLayers" title="Сменить слой карты" data-i18n-title="change_layer">
+                    <i class="fas fa-layer-group"></i>
+                </button>
+            </div>
+            
+            <!-- Легенда карты -->
+            <div class="map-legend">
+                <div class="legend-title">
+                    <i class="fas fa-layer-group"></i>
+                    <span data-i18n="map_legend">Легенда карты</span>
+                </div>
+                <div class="legend-items">
+                    <div class="legend-item" data-type="hospital">
+                        <span class="legend-icon hospital-bg"><i class="fas fa-hospital"></i></span>
+                        <span data-i18n="legend_hospital">Больницы</span>
+                    </div>
+                    <div class="legend-item" data-type="hotel">
+                        <span class="legend-icon hotel-bg"><i class="fas fa-bed"></i></span>
+                        <span data-i18n="legend_hotel">Отели</span>
+                    </div>
+                    <div class="legend-item" data-type="restaurant">
+                        <span class="legend-icon restaurant-bg"><i class="fas fa-utensils"></i></span>
+                        <span data-i18n="legend_restaurant">Рестораны</span>
+                    </div>
+                    <div class="legend-item" data-type="attraction">
+                        <span class="legend-icon attraction-bg"><i class="fas fa-mountain"></i></span>
+                        <span data-i18n="legend_attraction">Достопримечательности</span>
+                    </div>
+                    <div class="legend-item" data-type="pharmacy">
+                        <span class="legend-icon pharmacy-bg"><i class="fas fa-pills"></i></span>
+                        <span data-i18n="legend_pharmacy">Аптеки</span>
+                    </div>
+                    <div class="legend-item" data-type="police">
+                        <span class="legend-icon police-bg"><i class="fas fa-shield-alt"></i></span>
+                        <span data-i18n="legend_police">Полиция</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Кнопка открытия расширенной панели -->
+            <div class="open-panel-container">
+                <button class="open-panel-btn" id="openMapPanel">
+                    <i class="fas fa-expand-alt"></i>
+                    <span data-i18n="open_full_map">Открыть полную карту</span>
+                </button>
+            </div>
+            
+            <!-- Сайдбар с деталями места -->
+            <div class="map-sidebar-main" id="mapSidebar">
+                <!-- Заполняется динамически -->
+            </div>
+            
+            <!-- Панель сохраненных мест -->
+            <div class="saved-places-panel" id="savedPlacesPanel">
+                <div class="panel-header">
+                    <h3><i class="fas fa-bookmark"></i> <span data-i18n="saved_places">Сохранённые места</span></h3>
+                    <button class="panel-toggle" id="toggleSavedPanel">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+                <div class="panel-body" id="savedPlacesList">
+                    <!-- Заполняется динамически -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="map-features">
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search-location"></i>
+                    </div>
+                    <h3 data-i18n="feature_search_title">Умный поиск</h3>
+                    <p data-i18n="feature_search_desc">Находите больницы, аптеки, отели и рестораны по категориям или названиям</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 data-i18n="feature_save_title">Сохранение мест</h3>
+                    <p data-i18n="feature_save_desc">Добавляйте важные места в избранное для быстрого доступа</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-directions"></i>
+                    </div>
+                    <h3 data-i18n="feature_routes_title">Построение маршрутов</h3>
+                    <p data-i18n="feature_routes_desc">Стройте маршруты до выбранных мест через OpenStreetMap</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3 data-i18n="feature_history_title">История поиска</h3>
+                    <p data-i18n="feature_history_desc">Все ваши поиски сохраняются и доступны для быстрого повтора</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

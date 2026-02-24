@@ -1,0 +1,80 @@
+.account-menu { position: relative; margin-left: 2px; }
+
+.account-btn{
+  width: 40px; height: 40px;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  background: rgba(255,255,255,0.06);
+  display: grid; place-items: center;
+  cursor: pointer;
+}
+
+.account-avatar{
+  width: 32px; height: 32px;
+  border-radius: 999px;
+  display: grid; place-items: center;
+  font-weight: 700;
+  user-select: none;
+  background: rgba(255,255,255,0.12);
+  color: var(--text-primary);
+}
+
+.account-dropdown{
+  position: absolute;
+  right: 0; top: calc(100% + 10px);
+  min-width: 240px;
+  padding: 10px;
+  border-radius: 14px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 18px 40px var(--shadow-color);
+  display: none;
+  z-index: 9999;
+}
+
+.account-dropdown.show{ display:block; }
+
+.account-email{
+  font-size: 13px;
+  color: var(--text-tertiary);
+  padding: 10px 10px 8px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 8px;
+  word-break: break-word;
+}
+
+.account-action-btn{
+  width: 100%;
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 10px;
+  background: rgba(255,255,255,0.06);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.account-action-btn:hover{ background: rgba(255,255,255,0.10); }
+
+.account-action-btn.danger{
+  border: 1px solid rgba(255, 107, 53, 0.35);
+}
+
+.account-hint{
+  padding: 8px 10px 2px;
+  font-size: 12px;
+  color: var(--text-tertiary);
+  opacity: 0.8;
+}
+
+.account-menu {
+  position: relative;
+  z-index: 2000; 
+}
+
+.account-btn {
+  pointer-events: auto;
+}
+

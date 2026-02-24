@@ -1,0 +1,23 @@
+<div class="account-menu" id="accountMenu">
+  <button class="account-btn" id="accountBtn" aria-haspopup="true" aria-expanded="false" aria-label="Account">
+    <span class="account-avatar" id="accountAvatar">?</span>
+  </button>
+
+  <div class="account-dropdown" id="accountDropdown" role="menu" aria-label="Account menu">
+    <div class="account-logged-out" id="accountLoggedOut">
+      <button class="account-action-btn" id="openAuthModalBtn">
+        <i class="fas fa-user"></i>
+        <span>Sign in</span>
+      </button>
+      <div class="account-hint">Magic link • no password</div>
+    </div>
+
+    <div class="account-logged-in" id="accountLoggedIn" style="display:none;">
+      <div class="account-email" id="accountEmail">user@example.com</div>
+      <button class="account-action-btn danger" id="logoutBtn">
+        <i class="fas fa-right-from-bracket"></i>
+        <span>Log out</span>
+      </button>
+    </div>
+  </div>
+</div>
