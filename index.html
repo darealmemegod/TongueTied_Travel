@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" data-theme="light" data-font-size="medium">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TongueTied Travel - Путешествия без языковых барьеров. Карта с поиском мест, переводчик и помощник для путешественников.">
+  <title>TongueTied Travel - Карта и Переводчик для Путешествий</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="css/main.css">
+  
+
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🗺️</text></svg>">
+</head>
+<body>
+  <a href="#main-content" class="skip-link" data-i18n="skip_to_content">Перейти к основному содержимому</a>
+
+  <div data-include="partials/header.html"></div>
+
+  <main id="main-content">
+    <div data-include="partials/hero.html"></div>
+
+    <div data-include="partials/stats.html"></div>
+    <div data-include="partials/translator-panel.html"></div>
+
+    <section class="map-section section" id="mapSection">
+      <div class="container">
+        <h2 class="section-title">Карта важных мест для путешественников</h2>
+        <p class="section-subtitle">
+          Ищите больницы, отели, рестораны, аптеки и другие важные места. Сохраняйте в избранное и стройте маршруты.
+        </p>
+        <div class="map-container-main">
+          <div id="map"></div>
+        </div>
+      </div>
+    </section>
+
+    <div data-include="partials/cards.html"></div>
+    <div data-include="partials/ai-assistant.html"></div>
+    <div data-include="partials/features.html"></div>
+  </main>
+
+  <div data-include="partials/footer.html"></div>
+  <div id="mapPanelContainer"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  
+  <script src="js/utils.js"></script>
+  <script src="js/data/translations-loader.js"></script>
+  <script src="js/include-components.js"></script>
+
+  <script src="js/accessibility.js"></script>
+  <script src="js/language-switcher.js"></script>
+
+  <script src="js/map-search.js"></script>
+  <script src="js/translator.js"></script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
